@@ -9,9 +9,3 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 }
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/SAMANA-JABAR/SAMANA-ADMIN.git
-git push -u origin main
