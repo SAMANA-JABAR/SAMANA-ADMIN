@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">SAMANA-ADMIN</string>
+    <string name="input_email">Email</string>
+    <string name="input_password">Password</string>
+    <string name="button_login">Login</string>
 </resources>
