@@ -16,8 +16,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     companion object {
-        private const val SPLASH_DELAY_SHOW: Long = 2000L
-        private const val SPLASH_DELAY_HIDE: Long = 500L
+        private const val SPLASH_DELAY: Long = 3000L
     }
 
     private val binding: ActivityMainBinding by lazy {
@@ -41,7 +40,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun routing() {
         Handler(mainLooper).postDelayed({
-            disapearAnimation()
             binding.progressBar.show(true)
             userPreferences.email.asLiveData().observe(this, {
                 binding.progressBar.show(false)
@@ -49,7 +47,8 @@ class MainActivity : AppCompatActivity() {
                     if (it != null) HomeActivity::class.java else LoginActivity::class.java
                 startActivityAndFinish(activity)
             })
-        }, SPLASH_DELAY_SHOW)
+        }, SPLASH_DELAY)
+
     }
 
     private fun initSplashAnimation() {
@@ -65,16 +64,6 @@ class MainActivity : AppCompatActivity() {
         val slideAnimation = AnimationUtils.loadAnimation(this, R.anim.top_slide)
         with(binding) {
             SplashScreenImage.startAnimation(slideAnimation)
-        }
-    }
-
-    private fun disapearAnimation() {
-        val disapearAnimation = AnimationUtils.loadAnimation(this, R.anim.disapear_slide)
-        with(binding) {
-            SplashScreenImage.startAnimation(disapearAnimation)
-            Handler(mainLooper).postDelayed({
-                SplashScreenImage.show(false)
-            }, SPLASH_DELAY_HIDE)
         }
     }
 
