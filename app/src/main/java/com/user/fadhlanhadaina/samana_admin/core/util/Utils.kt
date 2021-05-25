@@ -3,8 +3,9 @@ package com.user.fadhlanhadaina.samana_admin.core.util
 import android.app.Activity
 import android.content.Intent
 import android.view.View
+import android.widget.Toast
 
-object utils {
+object Utils {
 
     fun <A : Activity> Activity.startActivityAndFinish(activity: Class<A>) {
         Intent(this, activity).also {
@@ -15,9 +16,14 @@ object utils {
     }
 
     fun View.show(boolean: Boolean) {
-        when(boolean) {
-            true -> visibility = View.VISIBLE
-            else -> visibility = View.GONE
+        visibility = when(boolean) {
+            true -> View.VISIBLE
+            else -> View.GONE
         }
+    }
+
+
+    fun Activity.showToast(charSequence: CharSequence?, duration: Int) {
+        Toast.makeText(this.applicationContext, charSequence, duration).show()
     }
 }

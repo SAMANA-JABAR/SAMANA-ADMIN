@@ -8,8 +8,8 @@ import android.view.animation.AnimationUtils
 import androidx.lifecycle.asLiveData
 import com.user.fadhlanhadaina.samana_admin.R
 import com.user.fadhlanhadaina.samana_admin.core.data.UserPreferences
-import com.user.fadhlanhadaina.samana_admin.core.util.utils.show
-import com.user.fadhlanhadaina.samana_admin.core.util.utils.startActivityAndFinish
+import com.user.fadhlanhadaina.samana_admin.core.util.Utils.show
+import com.user.fadhlanhadaina.samana_admin.core.util.Utils.startActivityAndFinish
 import com.user.fadhlanhadaina.samana_admin.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 

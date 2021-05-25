@@ -19,7 +19,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".presentation.ui.HomeActivity" />
-        <activity android:name=".presentation.ui.SplashActivity"/>
 
         <meta-data
             android:name="preloaded_fonts"

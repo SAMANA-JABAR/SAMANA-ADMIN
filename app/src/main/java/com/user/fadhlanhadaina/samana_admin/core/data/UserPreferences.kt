@@ -21,12 +21,10 @@ class UserPreferences @Inject constructor(@ApplicationContext context: Context) 
         get() = appContext.dataStore.data.map { preferences ->
             preferences[EMAIL]
         }
-
-    suspend fun saveEmail(email: String) {
-        appContext.dataStore.edit { preferences ->
-            preferences[EMAIL] = email
+    val password: Flow<String?>
+        get() = appContext.dataStore.data.map { preferences ->
+            preferences[PASSWORD]
         }
-    }
 
     suspend fun clear() {
         appContext.dataStore.edit { preferences ->
@@ -34,8 +32,17 @@ class UserPreferences @Inject constructor(@ApplicationContext context: Context) 
         }
     }
 
+    suspend fun store(email: String, password: String) {
+        appContext.dataStore.edit { preferences ->
+            preferences[EMAIL] = email
+            preferences[PASSWORD] = password
+        }
+
+    }
+
     companion object {
         private val EMAIL = stringPreferencesKey("key_email")
+        private val PASSWORD = stringPreferencesKey("key_password")
     }
 
 }

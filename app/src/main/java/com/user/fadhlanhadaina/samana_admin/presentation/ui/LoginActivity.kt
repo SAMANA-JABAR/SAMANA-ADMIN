@@ -4,12 +4,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.lifecycle.lifecycleScope
 import com.user.fadhlanhadaina.samana_admin.core.data.UserPreferences
+import com.user.fadhlanhadaina.samana_admin.core.util.Utils.startActivityAndFinish
+import com.user.fadhlanhadaina.samana_admin.core.util.Utils.showToast
 import com.user.fadhlanhadaina.samana_admin.databinding.ActivityLoginBinding
-import com.user.fadhlanhadaina.samana_admin.presentation.presenter.viewmodel.MainViewModel
+import com.user.fadhlanhadaina.samana_admin.presentation.presenter.viewmodel.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -19,7 +19,7 @@ class LoginActivity : AppCompatActivity() {
     }
     @Inject
     lateinit var userPreferences: UserPreferences
-    private val viewModel: MainViewModel by viewModels<MainViewModel>()
+    private val viewModel: LoginViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,21 +34,37 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun initListener() {
+        fieldCheckerListener()
         submitClickListener()
+    }
+
+    private fun fieldCheckerListener() {
+        with(binding) {
+            //
+        }
     }
 
     private fun submitClickListener() {
         with(binding) {
             loginBtn.setOnClickListener {
-                val email = emailInput.text
-                val password = passwordInput.text
-                if (email != null) {
-                    lifecycleScope.launch {
-                        viewModel.saveEmail(email.toString())
-                    }
+                val email = emailInput.text.toString()
+                val password = passwordInput.text.toString()
+                if(validateLogin(email, password)) {
+                    viewModel.store(email, password)
+                    startActivityAndFinish(HomeActivity::class.java)
+                    showToast("Berhasil masuk!", Toast.LENGTH_LONG)
                 }
-                Toast.makeText(applicationContext, "$email $password", Toast.LENGTH_LONG).show()
+                else {
+                    showToast("Kredensial tidak dikenal", Toast.LENGTH_LONG)
+                }
             }
         }
+    }
+
+    private fun validateLogin(email: String, password: String): Boolean = when{
+        email == "panjul@mail.com" && password == "onge" -> {
+            true
+        }
+        else -> false
     }
 }

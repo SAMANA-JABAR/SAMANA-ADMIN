@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,68 +8,99 @@
     tools:context=".presentation.ui.HomeActivity"
     android:orientation="vertical">
 
-    <androidx.cardview.widget.CardView
+    <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="118dp"
+        android:contentDescription="@string/blank"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:cardCornerRadius="0dp">
+        app:srcCompat="@drawable/shape_statusbar_rounded" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="15dp"
-            android:background="@color/blue_100">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profileImage"
+        android:layout_width="81dp"
+        android:layout_height="81dp"
+        android:layout_marginStart="28dp"
+        android:contentDescription="@string/profile_content_description"
+        android:src="@drawable/ic_baseline_account_circle_24"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        tools:src="@drawable/ic_baseline_account_circle_24" />
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/profileImage"
-                android:layout_width="81dp"
-                android:layout_height="81dp"
-                android:contentDescription="@string/profile_content_description"
-                android:src="@drawable/ic_baseline_account_circle_24"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.008"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.2"
-                tools:src="@drawable/ic_baseline_account_circle_24" />
+    <TextView
+        android:id="@+id/profileNik"
+        android:layout_width="215dp"
+        android:layout_height="21dp"
+        android:fontFamily="@font/raleway"
+        android:text="@string/profile_admin"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.229"
+        app:layout_constraintStart_toEndOf="@+id/profileImage"
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.597" />
 
-            <TextView
-                android:id="@+id/profileName"
-                android:layout_width="215dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="17dp"
-                android:fontFamily="@font/raleway_medium"
-                android:text="@string/profile_name"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/profileImage"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.175" />
+    <TextView
+        android:id="@+id/profileName"
+        android:layout_width="215dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/raleway_medium"
+        android:text="@string/profile_name"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toEndOf="@+id/profileImage"
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.387" />
 
-            <TextView
-                android:id="@+id/profileNik"
-                android:layout_width="215dp"
-                android:layout_height="21dp"
-                android:layout_marginStart="17dp"
-                android:fontFamily="@font/raleway"
-                android:text="@string/profile_nik"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/profileImage"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/logoutBtn"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:contentDescription="@string/logout"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.942"
+        app:layout_constraintStart_toEndOf="@+id/profileImage"
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.51"
+        app:srcCompat="@drawable/ic_baseline_remove_circle_outline_24" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="372dp"
+        android:layout_height="100dp"
+        app:cardBackgroundColor="@color/blue_100"
+        app:cardCornerRadius="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.41"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.335" >
 
     </androidx.cardview.widget.CardView>
-</LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="372dp"
+        android:layout_height="100dp"
+        app:cardBackgroundColor="@color/blue_100"
+        app:cardCornerRadius="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.41"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.551" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
