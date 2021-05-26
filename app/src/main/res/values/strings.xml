@@ -9,7 +9,15 @@
     <string name="profile_content_description">Profile Image</string>
     <string name="blank">"</string>
     <string name="logout">Logout</string>
-    <string name="logout_confirmation_message">Apa anda yakin ingin keluar?</string>
-    <string name="logout_confirmation_yes">Ya</string>
-    <string name="logout_confirmation_no">Tidak</string>
+    <string name="logout_confirmation_message">Are you sure want to logout?</string>
+    <string name="logout_confirmation_yes">Yes</string>
+    <string name="logout_confirmation_no">No</string>
+    <string name="change_password">Change Password</string>
+    <string name="current_password">Current password</string>
+    <string name="new_password">New password</string>
+    <string name="confirmation_new_password">Confirmation new password</string>
+    <string name="login_success">Successfully logged in!</string>
+    <string name="login_timeout">Request timeout</string>
+    <string name="login_fail">Invalid credential</string>
+    <string name="update">Update</string>
 </resources>

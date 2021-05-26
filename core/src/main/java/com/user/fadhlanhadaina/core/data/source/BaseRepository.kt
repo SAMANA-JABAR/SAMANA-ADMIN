@@ -1,4 +1,4 @@
-package com.user.fadhlanhadaina.samana_admin.core.data
+package com.user.fadhlanhadaina.core.data.source
 
 abstract class BaseRepository(private val userPreferences: UserPreferences) {
     suspend fun logout() {

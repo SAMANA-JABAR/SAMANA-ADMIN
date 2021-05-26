@@ -46,7 +46,8 @@
         android:layout_height="wrap_content"
         android:hint="@string/input_password"
         android:layout_gravity="center"
-        android:layout_marginBottom="10dp">
+        android:layout_marginBottom="10dp"
+        app:endIconMode="password_toggle">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/passwordInput"
@@ -62,6 +63,16 @@
         android:layout_height="wrap_content"
         android:text="@string/button_login"
         android:layout_gravity="center"/>
+
+    <ProgressBar
+        android:id="@+id/loginProgress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="124dp"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/blue_500"
+        android:progressTint="#E3F2FD"
+        android:visibility="gone" />
 
 
 </LinearLayout>

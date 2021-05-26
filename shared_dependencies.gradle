@@ -1,0 +1,37 @@
+dependencies {
+
+    // code scanner
+    implementation "com.budiyev.android:code-scanner:$codescanner_version"
+
+    // circle imageview
+    implementation "de.hdodenhof:circleimageview:$circleimage_version"
+
+    // dagger hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+
+    // data store
+    implementation("androidx.datastore:datastore:$datastore_version")
+    implementation("androidx.datastore:datastore-preferences:$datastore_version")
+
+    // retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+    // room
+    implementation("androidx.room:room-runtime:$room_version")
+    kapt "androidx.room:room-compiler:$room_version"
+    kapt("androidx.room:room-compiler:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
+
+    // activity
+    implementation("androidx.activity:activity-ktx:$activity_version")
+
+    // fragment
+    implementation "androidx.fragment:fragment-ktx:$fragment_version"
+    implementation "androidx.fragment:fragment:$fragment_version"
+
+    // recycleview
+    implementation("androidx.recyclerview:recyclerview:$recyclerview_version")
+    implementation("androidx.recyclerview:recyclerview-selection:$recyclerview_selection_version")
+}

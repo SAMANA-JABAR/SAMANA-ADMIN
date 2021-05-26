@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/changePasswordBtn"
+        android:title="@string/change_password"
+        android:icon="@drawable/ic_baseline_change_pass_key_24_black"/>
+    <item
+        android:id="@+id/logoutBtn"
+        android:title="@string/logout"
+        android:icon="@drawable/ic_baseline_power_settings_new_24_black"/>
+</menu>

@@ -7,9 +7,9 @@ import android.view.WindowManager
 import android.view.animation.AnimationUtils
 import androidx.lifecycle.asLiveData
 import com.user.fadhlanhadaina.samana_admin.R
-import com.user.fadhlanhadaina.samana_admin.core.data.UserPreferences
-import com.user.fadhlanhadaina.samana_admin.core.util.Utils.show
-import com.user.fadhlanhadaina.samana_admin.core.util.Utils.startActivityAndFinish
+import com.user.fadhlanhadaina.core.data.source.UserPreferences
+import com.user.fadhlanhadaina.core.util.Utils.show
+import com.user.fadhlanhadaina.core.util.Utils.startActivityAndFinish
 import com.user.fadhlanhadaina.samana_admin.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
