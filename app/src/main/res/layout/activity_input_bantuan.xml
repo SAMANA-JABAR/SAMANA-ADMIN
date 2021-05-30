@@ -432,7 +432,6 @@
             android:layout_marginTop="@dimen/dimens8"
             android:backgroundTint="@color/blue_100"
             android:hint="@string/air"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/peneranganInputLayout"
             app:layout_constraintStart_toStartOf="@id/peneranganInputLayout"
             app:layout_constraintTop_toBottomOf="@id/peneranganInputLayout">
@@ -450,12 +449,11 @@
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimens8"
-            android:layout_marginBottom="@dimen/dimens22"
             android:backgroundTint="@color/blue_100"
             android:hint="@string/luas_rumah"
-            app:layout_constraintEnd_toEndOf="@id/rwInputLayout"
-            app:layout_constraintStart_toStartOf="@id/rtInputLayout"
-            app:layout_constraintTop_toBottomOf="@id/rtInputLayout">
+            app:layout_constraintEnd_toEndOf="@id/airInputLayout"
+            app:layout_constraintStart_toStartOf="@id/airInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/airInputLayout">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/luasRumahInput"
@@ -463,5 +461,15 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/white"/>
         </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/inputBantuanBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens12"
+            android:text="@string/submit"
+            app:layout_constraintEnd_toEndOf="@id/luasRumahInputLayout"
+            app:layout_constraintStart_toStartOf="@id/luasRumahInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/luasRumahInputLayout"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
