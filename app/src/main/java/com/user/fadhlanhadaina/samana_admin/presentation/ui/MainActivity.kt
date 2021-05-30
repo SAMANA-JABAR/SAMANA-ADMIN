@@ -12,6 +12,7 @@ import com.user.fadhlanhadaina.core.util.Utils.show
 import com.user.fadhlanhadaina.core.util.Utils.startActivityAndFinish
 import com.user.fadhlanhadaina.samana_admin.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -22,20 +23,16 @@ class MainActivity : AppCompatActivity() {
     private val binding: ActivityMainBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
-    private lateinit var userPreferences: UserPreferences
+    @Inject
+    lateinit var userPreferences: UserPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
         initActionBar()
-        initPreferences()
         initSplashAnimation()
         routing()
-    }
-
-    private fun initPreferences() {
-        userPreferences = UserPreferences(this)
     }
 
     private fun routing() {
@@ -52,11 +49,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initSplashAnimation() {
-        window.setFlags(
-            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN
-        )
-
         showUpAnimation()
     }
 

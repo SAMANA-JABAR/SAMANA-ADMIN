@@ -23,14 +23,13 @@ class HomeActivity : AppCompatActivity() {
     private val binding: ActivityHomeBinding by lazy {
         ActivityHomeBinding.inflate(layoutInflater)
     }
-
-    @Inject
-    lateinit var userPreferences: UserPreferences
     private val viewModel: HomeViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
+        initListener()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -47,11 +46,11 @@ class HomeActivity : AppCompatActivity() {
                 MaterialAlertDialogBuilder(this)
                     .setMessage(resources.getString(R.string.logout_confirmation_message))
                     .setPositiveButton(resources.getString(R.string.logout_confirmation_yes)) { _, _ ->
-                        // ya
+                        // yes
                         performLogout()
                     }
                     .setNegativeButton(resources.getString(R.string.logout_confirmation_no)) { _, _ ->
-                        // tidak
+                        // no
                     }
                     .show()
             }
@@ -62,5 +61,15 @@ class HomeActivity : AppCompatActivity() {
     private fun performLogout() = lifecycleScope.launch{
         startActivityAndFinish(LoginActivity::class.java)
         viewModel.logout()
+    }
+
+    private fun initListener() {
+        inputBantuanClickListener()
+    }
+
+    private fun inputBantuanClickListener() {
+        binding.inputBantuanCV.setOnClickListener {
+            startActivity(InputBantuanActivity::class.java)
+        }
     }
 }

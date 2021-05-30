@@ -20,4 +20,20 @@
     <string name="login_timeout">Request timeout</string>
     <string name="login_fail">Invalid credential</string>
     <string name="update">Update</string>
+    <string name="nik">NIK</string>
+    <string name="nama">Nama</string>
+    <string name="tanggal_lahir">Tanggal lahir</string>
+    <string name="input_data_bansos">INPUT DATA BANSOS</string>
+    <string name="tanggungan">Tanggungan</string>
+    <string name="pendidikan">Pendidikan</string>
+    <string name="profesi">Profesi</string>
+    <string name="status">Status</string>
+    <string name="gaji">Gaji</string>
+    <string name="kota">Kota</string>
+    <string name="kota_kabupaten">Kota/Kabupaten</string>
+    <string name="kecamatan">Kecamatan</string>
+    <string name="kelurahan">Kelurahan</string>
+    <string name="rt">RT</string>
+    <string name="rw">RW</string>
+    <string name="alamat">Alamat</string>
 </resources>

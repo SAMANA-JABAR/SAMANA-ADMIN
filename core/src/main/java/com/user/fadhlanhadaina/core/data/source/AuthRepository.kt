@@ -3,6 +3,7 @@ package com.user.fadhlanhadaina.core.data.source
 import android.util.Log
 import com.user.fadhlanhadaina.core.domain.model.User
 import com.user.fadhlanhadaina.core.data.source.remote.RemoteDataSource
+import com.user.fadhlanhadaina.core.util.Mapper.mapRequestStatusToInfo
 import com.user.fadhlanhadaina.core.util.Mapper.toUser
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -17,29 +18,24 @@ class AuthRepository @Inject constructor(
 ): BaseRepository(userPreferences) {
 
     // Remote datasource
-    fun getCredential(email: String, password: String) : Flow<User> = flow {
+    fun getCredential(email: String, password: String) : Flow<Resource<User>> = flow {
         try {
-            emit(remoteDataSource.login(email, password).toUser())
+            emit(Resource.Success(remoteDataSource.login(email, password).toUser()))
         }
         catch(e: Exception) {
             Log.e("getCredential@AuthRepo", e.message.toString())
-            emit(User("timeout", "-", "-"))
+            emit(Resource.Error<User>(mapRequestStatusToInfo(e.message.toString())))
         }
     }.flowOn(Dispatchers.IO)
-
     fun changePassword(email: String, currentPassword: String, newPassword: String): Flow<String> = flow {
         try {
             Log.d("changePassword@AuthRepo", "$email, $currentPassword, $newPassword")
-            val status =
-                when (remoteDataSource.changePassword(email, currentPassword, newPassword).status) {
-                    "password salah" -> "Wrong password"
-                    else -> "Password successfully changed!"
-                }
-            emit(status)
+            remoteDataSource.changePassword(email, currentPassword, newPassword)
+            emit("Password updated successfully!")
         }
         catch (e: Exception) {
             Log.e("changePassword@AuthRepo", e.message.toString())
-            emit(e.toString())
+            emit(mapRequestStatusToInfo(e.message.toString()))
         }
     }.flowOn(Dispatchers.IO)
 

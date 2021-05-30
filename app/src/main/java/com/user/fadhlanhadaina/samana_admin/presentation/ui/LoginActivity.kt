@@ -5,20 +5,23 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.lifecycle.lifecycleScope
+import com.user.fadhlanhadaina.core.data.source.Resource
 import com.user.fadhlanhadaina.core.data.source.UserPreferences
 import com.user.fadhlanhadaina.core.data.source.remote.network.AuthService
 import com.user.fadhlanhadaina.core.util.Utils.disable
 import com.user.fadhlanhadaina.core.util.Utils.show
+import com.user.fadhlanhadaina.core.util.Utils.showAlertDialog
+import com.user.fadhlanhadaina.core.util.Utils.showSnackbar
 import com.user.fadhlanhadaina.core.util.Utils.startActivityAndFinish
-import com.user.fadhlanhadaina.core.util.Utils.showToast
 import com.user.fadhlanhadaina.samana_admin.R
 import com.user.fadhlanhadaina.samana_admin.databinding.ActivityLoginBinding
 import com.user.fadhlanhadaina.samana_admin.presentation.presenter.viewmodel.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 import java.util.*
 import javax.inject.Inject
 
@@ -108,21 +111,20 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun performLogin(email: String, password: String) {
+    private fun performLogin(email: String, password: String) = lifecycleScope.launch {
         toggleLogin(false)
-        viewModel.getCredential(email.toLowerCase(Locale.ROOT), password).observe(this@LoginActivity) { user ->
+        viewModel.getCredential(email.toLowerCase(Locale.ROOT), password).collect { user ->
             Log.d("performLogin@LoginAct", user.toString())
-            if (user.username != null) {
-                val username = user.username?: ""
-                viewModel.store(username, email, password)
-                startActivityAndFinish(HomeActivity::class.java)
-                showToast(resources.getString(R.string.login_success), Toast.LENGTH_LONG)
+            when(user) {
+                is Resource.Success -> {
+                    val username = user.data?.username?: ""
+                    viewModel.store(username, email, password)
+                    startActivityAndFinish(HomeActivity::class.java)
+                    showSnackbar(binding.loginBtn, getString(R.string.login_success), Toast.LENGTH_LONG)
+                }
+                else ->
+                    showAlertDialog("", user.message)
             }
-            else if(user.username == "timeout" && user.email == "-")
-                showToast(resources.getString(R.string.login_timeout), Toast.LENGTH_LONG)
-            else
-                showToast(resources.getString(R.string.login_timeout), Toast.LENGTH_LONG)
-
             toggleLogin(true)
         }
     }

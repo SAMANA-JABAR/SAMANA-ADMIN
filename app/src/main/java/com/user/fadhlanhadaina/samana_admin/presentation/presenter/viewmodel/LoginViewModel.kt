@@ -10,7 +10,7 @@ import javax.inject.Inject
 @HiltViewModel
 class LoginViewModel @Inject constructor(private val authRepository: AuthRepository): BaseViewModel(authRepository) {
 
-    fun getCredential(email: String, password: String) = authRepository.getCredential(email, password).asLiveData()
+    fun getCredential(email: String, password: String) = authRepository.getCredential(email, password)
     fun store(username: String, email: String, password: String) = viewModelScope.launch {
         authRepository.store(username, email, password)
     }

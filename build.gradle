@@ -12,14 +12,13 @@ buildscript {
     ext.retrofit_version = "2.9.0"
     ext.datastore_version = "1.0.0-beta01"
     ext.circleimage_version = '3.1.0'
-    ext.codescanner_version = "2.1.0"
 
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.2.1'
+        classpath 'com.android.tools.build:gradle:4.1.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
 

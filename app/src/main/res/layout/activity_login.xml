@@ -23,7 +23,7 @@
         android:layout_height="256dp"
         app:srcCompat="@drawable/ic_login_logo"
         tools:srcCompat="@drawable/ic_login_logo"
-        android:contentDescription="TODO" />
+        android:contentDescription="@string/login_title" />
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"

@@ -4,13 +4,17 @@ import android.app.Activity
 import android.content.Intent
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import com.google.android.material.snackbar.Snackbar
 
 object Utils {
 
     fun <A : Activity> Activity.startActivityAndFinish(activity: Class<A>) {
         Intent(this, activity).also {
             it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            startActivity(it)
+            startActivity(it).also {
+                finish()
+            }
         }
     }
 
@@ -34,8 +38,18 @@ object Utils {
         }
     }
 
-
     fun Activity.showToast(charSequence: CharSequence?, duration: Int) {
-        Toast.makeText(this.applicationContext, charSequence, duration).show()
+        Toast.makeText(this, charSequence, duration).show()
+    }
+
+    fun Activity.showSnackbar(view: View, charSequence: CharSequence, duration: Int) {
+        Snackbar.make(view, charSequence, duration).show()
+    }
+    fun Activity.showAlertDialog(title: CharSequence?, charSequence: CharSequence?) {
+        AlertDialog.Builder(this)
+            .setTitle(title)
+            .setMessage(charSequence)
+            .setNegativeButton("Close") { _, _ -> }
+            .show()
     }
 }

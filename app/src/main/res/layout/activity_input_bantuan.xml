@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".presentation.ui.InputBantuanActivity"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:id="@+id/nikInputLayout"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens8"
+            android:backgroundTint="@color/blue_100"
+            android:hint="@string/nik"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nikInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:inputType="number"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:id="@+id/namaInputLayout"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens8"
+            android:backgroundTint="@color/blue_100"
+            android:hint="@string/nama"
+            app:layout_constraintEnd_toEndOf="@id/nikInputLayout"
+            app:layout_constraintStart_toStartOf="@id/nikInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/nikInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/namaInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:inputType="textPersonName"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:id="@+id/dateInputLayout"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens8"
+            android:backgroundTint="@color/blue_100"
+            android:hint="@string/tanggal_lahir"
+            app:layout_constraintEnd_toEndOf="@id/namaInputLayout"
+            app:layout_constraintStart_toStartOf="@id/namaInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/namaInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/dateInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:focusable="false"
+                android:clickable="true"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:id="@+id/tanggunganInputLayout"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens8"
+            android:backgroundTint="@color/blue_100"
+            android:hint="@string/tanggungan"
+            app:layout_constraintEnd_toEndOf="@id/dateInputLayout"
+            app:layout_constraintStart_toStartOf="@id/dateInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/dateInputLayout">
+
+            <AutoCompleteTextView
+                android:id="@+id/acTanggunganInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:inputType="none"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:id="@+id/pendidikanInputLayout"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens8"
+            android:backgroundTint="@color/blue_100"
+            android:hint="@string/pendidikan"
+            app:layout_constraintEnd_toEndOf="@id/tanggunganInputLayout"
+            app:layout_constraintStart_toStartOf="@id/tanggunganInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/tanggunganInputLayout">
+
+            <AutoCompleteTextView
+                android:id="@+id/acPendidikanInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:id="@+id/profesiInputLayout"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens8"
+            android:backgroundTint="@color/blue_100"
+            android:hint="@string/profesi"
+            app:layout_constraintEnd_toEndOf="@id/pendidikanInputLayout"
+            app:layout_constraintStart_toStartOf="@id/pendidikanInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/pendidikanInputLayout">
+
+            <AutoCompleteTextView
+                android:id="@+id/acProfesiInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:id="@+id/statusInputLayout"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens8"
+            android:backgroundTint="@color/blue_100"
+            android:hint="@string/status"
+            app:layout_constraintEnd_toEndOf="@id/profesiInputLayout"
+            app:layout_constraintStart_toStartOf="@id/profesiInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/profesiInputLayout">
+
+            <AutoCompleteTextView
+                android:id="@+id/acStatusInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:id="@+id/gajiInputLayout"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens8"
+            android:backgroundTint="@color/blue_100"
+            android:hint="@string/gaji"
+            app:layout_constraintEnd_toEndOf="@id/statusInputLayout"
+            app:layout_constraintStart_toStartOf="@id/statusInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/statusInputLayout">
+
+            <AutoCompleteTextView
+                android:id="@+id/acGajiInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:id="@+id/kotaKabInputLayout"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens8"
+            android:backgroundTint="@color/blue_100"
+            android:hint="@string/kota_kabupaten"
+            app:layout_constraintEnd_toEndOf="@id/gajiInputLayout"
+            app:layout_constraintStart_toStartOf="@id/gajiInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/gajiInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/kotaKabInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:id="@+id/kecamatanInputLayout"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens8"
+            android:backgroundTint="@color/blue_100"
+            android:hint="@string/kecamatan"
+            app:layout_constraintEnd_toEndOf="@id/kotaKabInputLayout"
+            app:layout_constraintStart_toStartOf="@id/kotaKabInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/kotaKabInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/kecamatanInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:id="@+id/kelurahanInputLayout"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens8"
+            android:backgroundTint="@color/blue_100"
+            android:hint="@string/kelurahan"
+            app:layout_constraintEnd_toEndOf="@id/kecamatanInputLayout"
+            app:layout_constraintStart_toStartOf="@id/kecamatanInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/kecamatanInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/kelurahanInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:id="@+id/rtInputLayout"
+            android:layout_width="155dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens8"
+            android:backgroundTint="@color/blue_100"
+            android:hint="@string/rt"
+            app:layout_constraintEnd_toStartOf="@id/rwInputLayout"
+            app:layout_constraintStart_toStartOf="@id/kelurahanInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/kelurahanInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/rtInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:inputType="number"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:id="@+id/rwInputLayout"
+            android:layout_width="155dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens8"
+            android:layout_marginStart="@dimen/dimens4"
+            android:backgroundTint="@color/blue_100"
+            android:hint="@string/rw"
+            app:layout_constraintEnd_toEndOf="@id/kelurahanInputLayout"
+            app:layout_constraintStart_toEndOf="@id/rtInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/kelurahanInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/rwInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:inputType="number"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:id="@+id/alamatInputLayout"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens8"
+            android:backgroundTint="@color/blue_100"
+            android:hint="@string/alamat"
+            app:layout_constraintEnd_toEndOf="@id/rwInputLayout"
+            app:layout_constraintStart_toStartOf="@id/rtInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/rtInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/alamatInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"/>
+        </com.google.android.material.textfield.TextInputLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

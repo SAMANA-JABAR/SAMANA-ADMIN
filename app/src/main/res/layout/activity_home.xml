@@ -63,28 +63,57 @@
         app:layout_constraintTop_toTopOf="@+id/imageView2"
         app:layout_constraintVertical_bias="0.387" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/inputBantuanCV"
         android:layout_width="372dp"
-        android:layout_height="100dp"
+        android:layout_height="96dp"
         android:layout_marginTop="36dp"
         app:cardBackgroundColor="@color/blue_100"
         app:cardCornerRadius="25dp"
+        android:checkable="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2">
 
-    </androidx.cardview.widget.CardView>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/inputBantuanIcon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="24dp"
+                android:background="@drawable/ic_baseline_input_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens22"
+                android:text="@string/input_data_bansos"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/inputBantuanIcon"
+                app:layout_constraintStart_toEndOf="@id/inputBantuanIcon"
+                app:layout_constraintTop_toTopOf="@id/inputBantuanIcon" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
         android:layout_width="372dp"
         android:layout_height="100dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="16dp"
         app:cardBackgroundColor="@color/blue_100"
         app:cardCornerRadius="25dp"
-        app:layout_constraintEnd_toEndOf="@+id/cardView"
-        app:layout_constraintStart_toStartOf="@+id/cardView"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+        app:layout_constraintEnd_toEndOf="@+id/inputBantuanCV"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/inputBantuanCV"
+        app:layout_constraintTop_toBottomOf="@+id/inputBantuanCV" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
