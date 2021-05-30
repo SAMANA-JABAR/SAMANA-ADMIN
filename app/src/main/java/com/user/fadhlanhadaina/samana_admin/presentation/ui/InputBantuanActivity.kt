@@ -6,8 +6,15 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.datepicker.MaterialDatePicker
+import com.user.fadhlanhadaina.core.data.source.local.DefaultOptionData.generateListAir
+import com.user.fadhlanhadaina.core.data.source.local.DefaultOptionData.generateListAtap
+import com.user.fadhlanhadaina.core.data.source.local.DefaultOptionData.generateListDinding
 import com.user.fadhlanhadaina.core.data.source.local.DefaultOptionData.generateListGaji
+import com.user.fadhlanhadaina.core.data.source.local.DefaultOptionData.generateListKesehatan
+import com.user.fadhlanhadaina.core.data.source.local.DefaultOptionData.generateListLantai
+import com.user.fadhlanhadaina.core.data.source.local.DefaultOptionData.generateListLuasRumah
 import com.user.fadhlanhadaina.core.data.source.local.DefaultOptionData.generateListPendidikan
+import com.user.fadhlanhadaina.core.data.source.local.DefaultOptionData.generateListPenerangan
 import com.user.fadhlanhadaina.core.data.source.local.DefaultOptionData.generateListProfesi
 import com.user.fadhlanhadaina.core.data.source.local.DefaultOptionData.generateListStatusKerja
 import com.user.fadhlanhadaina.core.data.source.local.DefaultOptionData.generateListTanggungan
@@ -97,6 +104,68 @@ class InputBantuanActivity : AppCompatActivity() {
                     )
                 )
 
+                val listKesehatan = generateListKesehatan()
+                acKesehatanInput.setAdapter(
+                    ArrayAdapter(
+                        applicationContext,
+                        R.layout.list_option_item,
+                        listKesehatan
+                    )
+                )
+
+                val listAtap = generateListAtap()
+                acAtapInput.setAdapter(
+                    ArrayAdapter(
+                        applicationContext,
+                        R.layout.list_option_item,
+                        listAtap
+                    )
+                )
+
+                val listDinding = generateListDinding()
+                acDindingInput.setAdapter(
+                    ArrayAdapter(
+                        applicationContext,
+                        R.layout.list_option_item,
+                        listDinding
+                    )
+                )
+
+                val listLantai = generateListLantai()
+                acLantaiInput.setAdapter(
+                    ArrayAdapter(
+                        applicationContext,
+                        R.layout.list_option_item,
+                        listLantai
+                    )
+                )
+
+                val listPenerangan = generateListPenerangan()
+                acPeneranganInput.setAdapter(
+                    ArrayAdapter(
+                        applicationContext,
+                        R.layout.list_option_item,
+                        listPenerangan
+                    )
+                )
+
+                val listAir = generateListAir()
+                acAirInput.setAdapter(
+                    ArrayAdapter(
+                        applicationContext,
+                        R.layout.list_option_item,
+                        listAir
+                    )
+                )
+
+                val listLuasRumah = generateListLuasRumah()
+                acLuasRumahInput.setAdapter(
+                    ArrayAdapter(
+                        applicationContext,
+                        R.layout.list_option_item,
+                        listLuasRumah
+                    )
+                )
             }
         }
     }

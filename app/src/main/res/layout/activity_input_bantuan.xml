@@ -330,7 +330,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
             android:id="@+id/kesehatanInputLayout"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
@@ -341,34 +341,36 @@
             app:layout_constraintStart_toStartOf="@id/tahapInputLayout"
             app:layout_constraintTop_toBottomOf="@id/tahapInputLayout">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/kesehatanInput"
+            <AutoCompleteTextView
+                android:id="@+id/acKesehatanInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/white"/>
+                android:backgroundTint="@color/white"
+                android:inputType="none" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
             android:id="@+id/atapInputLayout"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimens8"
             android:backgroundTint="@color/blue_100"
             android:hint="@string/atap"
-            app:layout_constraintEnd_toEndOf="@id/tahapInputLayout"
-            app:layout_constraintStart_toStartOf="@id/tahapInputLayout"
-            app:layout_constraintTop_toBottomOf="@id/tahapInputLayout">
+            app:layout_constraintEnd_toEndOf="@id/kesehatanInputLayout"
+            app:layout_constraintStart_toStartOf="@id/kesehatanInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/kesehatanInputLayout">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/atapInput"
+            <AutoCompleteTextView
+                android:id="@+id/acAtapInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/white"/>
+                android:backgroundTint="@color/white"
+                android:inputType="none" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
             android:id="@+id/dindingInputLayout"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
@@ -379,15 +381,16 @@
             app:layout_constraintStart_toStartOf="@id/atapInputLayout"
             app:layout_constraintTop_toBottomOf="@id/atapInputLayout">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/dindingInput"
+            <AutoCompleteTextView
+                android:id="@+id/acDindingInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/white"/>
+                android:backgroundTint="@color/white"
+                android:inputType="none" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
             android:id="@+id/lantaiInputLayout"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
@@ -398,15 +401,16 @@
             app:layout_constraintStart_toStartOf="@id/dindingInputLayout"
             app:layout_constraintTop_toBottomOf="@id/dindingInputLayout">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/lantaiInput"
+            <AutoCompleteTextView
+                android:id="@+id/acLantaiInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/white"/>
+                android:backgroundTint="@color/white"
+                android:inputType="none" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
             android:id="@+id/peneranganInputLayout"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
@@ -417,16 +421,17 @@
             app:layout_constraintStart_toStartOf="@id/lantaiInputLayout"
             app:layout_constraintTop_toBottomOf="@id/lantaiInputLayout">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/peneranganInput"
+            <AutoCompleteTextView
+                android:id="@+id/acPeneranganInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/white"/>
+                android:backgroundTint="@color/white"
+                android:inputType="none" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/airInputLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimens8"
@@ -436,15 +441,16 @@
             app:layout_constraintStart_toStartOf="@id/peneranganInputLayout"
             app:layout_constraintTop_toBottomOf="@id/peneranganInputLayout">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/airInput"
+            <AutoCompleteTextView
+                android:id="@+id/acAirInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/white" />
+                android:backgroundTint="@color/white"
+                android:inputType="none" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
             android:id="@+id/luasRumahInputLayout"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
@@ -455,11 +461,12 @@
             app:layout_constraintStart_toStartOf="@id/airInputLayout"
             app:layout_constraintTop_toBottomOf="@id/airInputLayout">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/luasRumahInput"
+            <AutoCompleteTextView
+                android:id="@+id/acLuasRumahInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/white"/>
+                android:backgroundTint="@color/white"
+                android:inputType="none" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton

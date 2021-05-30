@@ -116,4 +116,45 @@ object DefaultOptionData {
         "4.000.000 - 6.500.000",
         "> 6.500.000",
     )
+    fun generateListKesehatan(): List<String> = listOf(
+        "Sehat",
+        "Penyandang disabilitas",
+        "Penyakit kronis"
+    )
+    fun generateListAtap(): List<String> = listOf(
+        "Atap kualitas baik",
+        "Atap kualitas rendah/usang",
+        "Atap ijuk/rumbia",
+        "Tidak beratap"
+    )
+    fun generateListDinding(): List<String> = listOf(
+        "Tembok Kualitas Baik",
+        "Tembok Kualitas Rendah/Usang",
+        "Tembok Tidak Diplester",
+        "Dinding Bambu/Kayu",
+        "Tidak Berdinding"
+    )
+    fun generateListLantai(): List<String> = listOf(
+        "Keramik kualitas baik",
+        "Keramik kualitas rendah/usang",
+        "Kayu/Semen",
+        "Tanah"
+    )
+    fun generateListPenerangan(): List<String> = listOf(
+        "Listrik PLN",
+        "Listrik PLN sambung (bayar)",
+        "Listrik PLN sambung (gratis)",
+        "Tidak ada listrik"
+    )
+    fun generateListAir(): List<String> = listOf(
+        "PDAM",
+        "Sumur bor",
+        "Mata air alami"
+    )
+    fun generateListLuasRumah(): List<String> = listOf(
+        ">36 m2",
+        "21-36 m2",
+        "8-21 m2",
+        "0-8 m2",
+    )
 }
