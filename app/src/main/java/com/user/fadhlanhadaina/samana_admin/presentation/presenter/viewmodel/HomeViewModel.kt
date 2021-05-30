@@ -5,4 +5,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(authRepository: AuthRepository): BaseViewModel(authRepository)
+class HomeViewModel @Inject constructor(private val authRepository: AuthRepository): BaseViewModel(authRepository) {
+    fun getUser() = authRepository.getUserPreference()
+}

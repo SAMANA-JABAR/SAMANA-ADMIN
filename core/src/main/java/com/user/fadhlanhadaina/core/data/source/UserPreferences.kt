@@ -29,7 +29,7 @@ class UserPreferences @Inject constructor(@ApplicationContext context: Context) 
 
     fun get(): Flow<User> =
         appContext.dataStore.data.map { preferences ->
-            User(preferences[USERNAME]?: "", preferences[EMAIL]?: "", preferences[PASSWORD]?: "")
+            User(preferences[NAME]?: "", preferences[USERNAME]?: "", preferences[EMAIL]?: "", preferences[PASSWORD]?: "")
         }
 
     suspend fun clear() {
@@ -38,15 +38,17 @@ class UserPreferences @Inject constructor(@ApplicationContext context: Context) 
         }
     }
 
-    suspend fun store(username: String, email: String, password: String) {
+    suspend fun store(user: User) {
         appContext.dataStore.edit { preferences ->
-            preferences[USERNAME] = username
-            preferences[EMAIL] = email
-            preferences[PASSWORD] = password
+            preferences[NAME] = user.name.toString()
+            preferences[USERNAME] = user.username.toString()
+            preferences[EMAIL] = user.email.toString()
+            preferences[PASSWORD] = user.password.toString()
         }
     }
 
     companion object {
+        private val NAME = stringPreferencesKey("key_name")
         private val USERNAME = stringPreferencesKey("key_username")
         private val EMAIL = stringPreferencesKey("key_email")
         private val PASSWORD = stringPreferencesKey("key_password")

@@ -1,21 +1,15 @@
 package com.user.fadhlanhadaina.samana_admin.presentation.ui
 
-import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.appcompat.app.AlertDialog
-import com.google.android.material.snackbar.Snackbar
 import com.user.fadhlanhadaina.core.data.source.AuthRepository
 import com.user.fadhlanhadaina.core.domain.model.User
 import com.user.fadhlanhadaina.core.util.Utils.disable
 import com.user.fadhlanhadaina.core.util.Utils.show
 import com.user.fadhlanhadaina.core.util.Utils.showAlertDialog
-import com.user.fadhlanhadaina.core.util.Utils.showToast
-import com.user.fadhlanhadaina.samana_admin.R
 import com.user.fadhlanhadaina.samana_admin.databinding.ActivityChangePasswordBinding
 import com.user.fadhlanhadaina.samana_admin.presentation.presenter.viewmodel.ChangePasswordViewModel
 import dagger.hilt.android.AndroidEntryPoint

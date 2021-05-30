@@ -41,7 +41,7 @@ class AuthRepository @Inject constructor(
 
     // Preferences
     fun getUserPreference(): Flow<User> = userPreferences.get()
-    suspend fun store(username: String, email: String, password: String) {
-        userPreferences.store(username, email, password)
+    suspend fun store(user: User) {
+        userPreferences.store(user)
     }
 }

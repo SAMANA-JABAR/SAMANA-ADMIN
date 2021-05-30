@@ -11,13 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
             android:id="@+id/nikInputLayout"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimens8"
+            android:layout_marginTop="@dimen/dimens22"
             android:backgroundTint="@color/blue_100"
             android:hint="@string/nik"
             app:layout_constraintEnd_toEndOf="parent"
@@ -286,6 +285,180 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/alamatInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:id="@+id/bantuanInputLayout"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens8"
+            android:backgroundTint="@color/blue_100"
+            android:hint="@string/bantuan"
+            app:layout_constraintEnd_toEndOf="@id/alamatInputLayout"
+            app:layout_constraintStart_toStartOf="@id/alamatInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/alamatInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/bantuanInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:id="@+id/tahapInputLayout"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens8"
+            android:backgroundTint="@color/blue_100"
+            android:hint="@string/tahap"
+            app:layout_constraintEnd_toEndOf="@id/bantuanInputLayout"
+            app:layout_constraintStart_toStartOf="@id/bantuanInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/bantuanInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tahapInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:inputType="number"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:id="@+id/kesehatanInputLayout"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens8"
+            android:backgroundTint="@color/blue_100"
+            android:hint="@string/kesehatan"
+            app:layout_constraintEnd_toEndOf="@id/tahapInputLayout"
+            app:layout_constraintStart_toStartOf="@id/tahapInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/tahapInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/kesehatanInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:id="@+id/atapInputLayout"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens8"
+            android:backgroundTint="@color/blue_100"
+            android:hint="@string/atap"
+            app:layout_constraintEnd_toEndOf="@id/tahapInputLayout"
+            app:layout_constraintStart_toStartOf="@id/tahapInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/tahapInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/atapInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:id="@+id/dindingInputLayout"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens8"
+            android:backgroundTint="@color/blue_100"
+            android:hint="@string/dinding"
+            app:layout_constraintEnd_toEndOf="@id/atapInputLayout"
+            app:layout_constraintStart_toStartOf="@id/atapInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/atapInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/dindingInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:id="@+id/lantaiInputLayout"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens8"
+            android:backgroundTint="@color/blue_100"
+            android:hint="@string/lantai"
+            app:layout_constraintEnd_toEndOf="@id/dindingInputLayout"
+            app:layout_constraintStart_toStartOf="@id/dindingInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/dindingInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/lantaiInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:id="@+id/peneranganInputLayout"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens8"
+            android:backgroundTint="@color/blue_100"
+            android:hint="@string/penerangan"
+            app:layout_constraintEnd_toEndOf="@id/lantaiInputLayout"
+            app:layout_constraintStart_toStartOf="@id/lantaiInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/lantaiInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/peneranganInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/airInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens8"
+            android:backgroundTint="@color/blue_100"
+            android:hint="@string/air"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/peneranganInputLayout"
+            app:layout_constraintStart_toStartOf="@id/peneranganInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/peneranganInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/airInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:id="@+id/luasRumahInputLayout"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens8"
+            android:layout_marginBottom="@dimen/dimens22"
+            android:backgroundTint="@color/blue_100"
+            android:hint="@string/luas_rumah"
+            app:layout_constraintEnd_toEndOf="@id/rwInputLayout"
+            app:layout_constraintStart_toStartOf="@id/rtInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/rtInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/luasRumahInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/white"/>

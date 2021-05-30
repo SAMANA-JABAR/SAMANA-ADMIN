@@ -3,9 +3,7 @@ package com.user.fadhlanhadaina.samana_admin.presentation.ui
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.ArrayAdapter
-import android.widget.ListAdapter
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.user.fadhlanhadaina.core.data.source.local.DefaultOptionData.generateListGaji
@@ -19,7 +17,6 @@ import com.user.fadhlanhadaina.samana_admin.R
 import com.user.fadhlanhadaina.samana_admin.databinding.ActivityInputBantuanBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import java.util.*
 
 @AndroidEntryPoint
 class InputBantuanActivity : AppCompatActivity() {

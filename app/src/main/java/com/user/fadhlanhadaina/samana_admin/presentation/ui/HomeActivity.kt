@@ -9,14 +9,14 @@ import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.user.fadhlanhadaina.samana_admin.R
-import com.user.fadhlanhadaina.core.data.source.UserPreferences
+import com.user.fadhlanhadaina.core.domain.model.User
 import com.user.fadhlanhadaina.core.util.Utils.startActivityAndFinish
 import com.user.fadhlanhadaina.core.util.Utils.startActivity
 import com.user.fadhlanhadaina.samana_admin.databinding.ActivityHomeBinding
 import com.user.fadhlanhadaina.samana_admin.presentation.presenter.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
@@ -24,11 +24,13 @@ class HomeActivity : AppCompatActivity() {
         ActivityHomeBinding.inflate(layoutInflater)
     }
     private val viewModel: HomeViewModel by viewModels()
+    private lateinit var user: User
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        initData()
         initListener()
     }
 
@@ -63,13 +65,34 @@ class HomeActivity : AppCompatActivity() {
         viewModel.logout()
     }
 
+
+    private fun initData() {
+        lifecycleScope.launch {
+            viewModel.getUser().collect {
+                user = it
+                applyData()
+            }
+        }
+    }
+
+    private fun applyData() {
+        binding.profileName.text = user.name
+    }
+
     private fun initListener() {
         inputBantuanClickListener()
+        validasiBantuanClickListener()
     }
 
     private fun inputBantuanClickListener() {
         binding.inputBantuanCV.setOnClickListener {
             startActivity(InputBantuanActivity::class.java)
+        }
+    }
+
+    private fun validasiBantuanClickListener() {
+        binding.validasiBantuanCV.setOnClickListener {
+            startActivity(ValidasiBantuanActivity::class.java)
         }
     }
 }

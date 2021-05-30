@@ -9,7 +9,6 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.user.fadhlanhadaina.core.data.source.Resource
-import com.user.fadhlanhadaina.core.data.source.UserPreferences
 import com.user.fadhlanhadaina.core.data.source.remote.network.AuthService
 import com.user.fadhlanhadaina.core.util.Utils.disable
 import com.user.fadhlanhadaina.core.util.Utils.show
@@ -30,8 +29,6 @@ class LoginActivity : AppCompatActivity() {
     private val binding: ActivityLoginBinding by lazy {
         ActivityLoginBinding.inflate(layoutInflater)
     }
-    @Inject
-    lateinit var userPreferences: UserPreferences
     @Inject
     lateinit var clientApiLogin: AuthService
     private val viewModel: LoginViewModel by viewModels()
@@ -117,8 +114,7 @@ class LoginActivity : AppCompatActivity() {
             Log.d("performLogin@LoginAct", user.toString())
             when(user) {
                 is Resource.Success -> {
-                    val username = user.data?.username?: ""
-                    viewModel.store(username, email, password)
+                    user.data?.let { viewModel.store(it) }
                     startActivityAndFinish(HomeActivity::class.java)
                     showSnackbar(binding.loginBtn, getString(R.string.login_success), Toast.LENGTH_LONG)
                 }

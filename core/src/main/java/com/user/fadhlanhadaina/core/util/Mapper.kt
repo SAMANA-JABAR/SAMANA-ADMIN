@@ -4,7 +4,7 @@ import com.user.fadhlanhadaina.core.data.source.remote.response.LoginResponse
 import com.user.fadhlanhadaina.core.domain.model.User
 
 object Mapper {
-    fun LoginResponse.toUser(): User = User(this.username, this.email, this.password)
+    fun LoginResponse.toUser(): User = User(this.name, this.username, this.email, this.password)
     fun mapHeaderDateToDate(date: String): String {
         val arrayString = date.split(" ")
         val day = arrayString[1].subSequence(0, arrayString[1].length-1)

@@ -3,7 +3,6 @@ package com.user.fadhlanhadaina.samana_admin.presentation.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.view.WindowManager
 import android.view.animation.AnimationUtils
 import androidx.lifecycle.asLiveData
 import com.user.fadhlanhadaina.samana_admin.R
