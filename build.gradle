@@ -12,6 +12,7 @@ buildscript {
     ext.retrofit_version = "2.9.0"
     ext.datastore_version = "1.0.0-beta01"
     ext.circleimage_version = '3.1.0'
+    ext.okhttplogging_version = '4.9.1'
 
     repositories {
         google()

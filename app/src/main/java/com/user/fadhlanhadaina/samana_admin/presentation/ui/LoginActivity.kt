@@ -9,7 +9,6 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.user.fadhlanhadaina.core.data.source.Resource
-import com.user.fadhlanhadaina.core.data.source.remote.network.AuthService
 import com.user.fadhlanhadaina.core.util.Utils.disable
 import com.user.fadhlanhadaina.core.util.Utils.show
 import com.user.fadhlanhadaina.core.util.Utils.showAlertDialog
@@ -22,15 +21,12 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import java.util.*
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
     private val binding: ActivityLoginBinding by lazy {
         ActivityLoginBinding.inflate(layoutInflater)
     }
-    @Inject
-    lateinit var clientApiLogin: AuthService
     private val viewModel: LoginViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -87,10 +83,14 @@ class LoginActivity : AppCompatActivity() {
         with(binding) {
             when (boolean) {
                 true -> {
+                    emailInput.disable(false)
+                    passwordInput.disable(false)
                     loginBtn.disable(false)
                     loginProgress.show(false)
                 }
                 else -> {
+                    emailInput.disable(true)
+                    passwordInput.disable(true)
                     loginBtn.disable(true)
                     loginProgress.show(true)
                 }
@@ -114,12 +114,13 @@ class LoginActivity : AppCompatActivity() {
             Log.d("performLogin@LoginAct", user.toString())
             when(user) {
                 is Resource.Success -> {
+                    Log.d("success", user.data.toString())
                     user.data?.let { viewModel.store(it) }
                     startActivityAndFinish(HomeActivity::class.java)
                     showSnackbar(binding.loginBtn, getString(R.string.login_success), Toast.LENGTH_LONG)
                 }
                 else ->
-                    showAlertDialog("", user.message)
+                    showAlertDialog("Info", user.message)
             }
             toggleLogin(true)
         }

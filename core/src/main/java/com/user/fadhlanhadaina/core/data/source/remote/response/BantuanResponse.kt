@@ -1,17 +1,19 @@
-package com.user.fadhlanhadaina.core.domain.model
+package com.user.fadhlanhadaina.core.data.source.remote.response
 
 import com.google.gson.annotations.SerializedName
 
-data class Bantuan (
+data class BantuanResponse(
     var nik: String?,
     var nama: String?,
-    @SerializedName("tgl_lahir")
+    @SerializedName("tanggal_lahir")
     var tglLahir: String?,
+    @SerializedName("tanggungan_keluarga")
     var tanggungan: String?,
     var pendidikan: String?,
     var profesi: String?,
     var status: String?,
     var gaji: String?,
+    @SerializedName("kota_kabupaten")
     var kota: String?,
     var kecamatan: String?,
     var kelurahan: String?,
@@ -26,5 +28,5 @@ data class Bantuan (
     var air: String?,
     @SerializedName("luas_rumah")
     var luasRumah: String?,
-    var validasi: String?
+    var validasi: String?,
 )

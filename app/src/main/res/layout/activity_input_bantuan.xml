@@ -31,6 +31,23 @@
                 android:inputType="number"/>
         </com.google.android.material.textfield.TextInputLayout>
 
+        <FrameLayout
+            android:id="@+id/loadingNik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/nikInputLayout"
+            app:layout_constraintEnd_toEndOf="@+id/nikInputLayout"
+            app:layout_constraintStart_toStartOf="@+id/nikInputLayout"
+            app:layout_constraintTop_toTopOf="@+id/nikInputLayout"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <ProgressBar
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
+
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
             android:id="@+id/namaInputLayout"
@@ -291,45 +308,6 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-            android:id="@+id/bantuanInputLayout"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimens8"
-            android:backgroundTint="@color/blue_100"
-            android:hint="@string/bantuan"
-            app:layout_constraintEnd_toEndOf="@id/alamatInputLayout"
-            app:layout_constraintStart_toStartOf="@id/alamatInputLayout"
-            app:layout_constraintTop_toBottomOf="@id/alamatInputLayout">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/bantuanInput"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/white"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-            android:id="@+id/tahapInputLayout"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimens8"
-            android:backgroundTint="@color/blue_100"
-            android:hint="@string/tahap"
-            app:layout_constraintEnd_toEndOf="@id/bantuanInputLayout"
-            app:layout_constraintStart_toStartOf="@id/bantuanInputLayout"
-            app:layout_constraintTop_toBottomOf="@id/bantuanInputLayout">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tahapInput"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/white"
-                android:inputType="number"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
             android:id="@+id/kesehatanInputLayout"
             android:layout_width="320dp"
@@ -337,9 +315,9 @@
             android:layout_marginTop="@dimen/dimens8"
             android:backgroundTint="@color/blue_100"
             android:hint="@string/kesehatan"
-            app:layout_constraintEnd_toEndOf="@id/tahapInputLayout"
-            app:layout_constraintStart_toStartOf="@id/tahapInputLayout"
-            app:layout_constraintTop_toBottomOf="@id/tahapInputLayout">
+            app:layout_constraintEnd_toEndOf="@id/alamatInputLayout"
+            app:layout_constraintStart_toStartOf="@id/alamatInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/alamatInputLayout">
 
             <AutoCompleteTextView
                 android:id="@+id/acKesehatanInput"
@@ -475,8 +453,18 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimens12"
             android:text="@string/submit"
-            app:layout_constraintEnd_toEndOf="@id/luasRumahInputLayout"
+            app:layout_constraintEnd_toStartOf="@id/clearBantuanBtn"
             app:layout_constraintStart_toStartOf="@id/luasRumahInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/luasRumahInputLayout"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/clearBantuanBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens12"
+            android:text="@string/clear"
+            app:layout_constraintEnd_toEndOf="@id/luasRumahInputLayout"
+            app:layout_constraintStart_toEndOf="@id/inputBantuanBtn"
             app:layout_constraintTop_toBottomOf="@id/luasRumahInputLayout"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

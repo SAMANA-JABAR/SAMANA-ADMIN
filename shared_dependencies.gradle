@@ -1,5 +1,8 @@
 dependencies {
 
+    // http interceptor
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttplogging_version"
+
     // circle imageview
     implementation "de.hdodenhof:circleimageview:$circleimage_version"
 

@@ -10,6 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.user.fadhlanhadaina.samana_admin.R
 import com.user.fadhlanhadaina.core.domain.model.User
+import com.user.fadhlanhadaina.core.util.Utils.disable
 import com.user.fadhlanhadaina.core.util.Utils.startActivityAndFinish
 import com.user.fadhlanhadaina.core.util.Utils.startActivity
 import com.user.fadhlanhadaina.samana_admin.databinding.ActivityHomeBinding
@@ -86,13 +87,30 @@ class HomeActivity : AppCompatActivity() {
 
     private fun inputBantuanClickListener() {
         binding.inputBantuanCV.setOnClickListener {
-            startActivity(InputBantuanActivity::class.java)
+            startActivity(InputBantuanActivity::class.java).also {
+                toggleCV(false)
+            }
         }
     }
 
     private fun validasiBantuanClickListener() {
         binding.validasiBantuanCV.setOnClickListener {
-            startActivity(ValidasiBantuanActivity::class.java)
+            startActivity(ValidasiBantuanActivity::class.java).also {
+                toggleCV(false)
+            }
         }
+    }
+
+    private fun toggleCV(_boolean: Boolean) {with(binding) {
+        val boolean = !_boolean
+        inputBantuanCV.disable(boolean)
+        validasiBantuanCV.disable(boolean)
+    }
+
+    }
+    override fun onResume() {
+        super.onResume()
+
+        toggleCV(true)
     }
 }

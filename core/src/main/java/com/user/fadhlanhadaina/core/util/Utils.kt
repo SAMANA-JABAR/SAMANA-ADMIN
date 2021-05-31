@@ -38,6 +38,12 @@ object Utils {
         }
     }
 
+    fun View.notifyFieldEmpty(activity: Activity) {
+        requestFocus()
+        computeScroll()
+        activity.showAlertDialog("Error", "Field ini tidak boleh kosong!")
+    }
+
     fun Activity.showToast(charSequence: CharSequence?, duration: Int) {
         Toast.makeText(this, charSequence, duration).show()
     }

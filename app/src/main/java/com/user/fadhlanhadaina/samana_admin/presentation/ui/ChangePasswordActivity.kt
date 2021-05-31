@@ -165,10 +165,16 @@ class ChangePasswordActivity : AppCompatActivity() {
         with(binding) {
             when (boolean) {
                 true -> {
+                    curPasswordInput.disable(false)
+                    newPasswordInput.disable(false)
+                    confirmNewPasswordInput.disable(false)
                     updatePasswordBtn.disable(false)
                     updatePasswordProgress.show(false)
                 }
                 else -> {
+                    curPasswordInput.disable(true)
+                    newPasswordInput.disable(true)
+                    confirmNewPasswordInput.disable(true)
                     updatePasswordBtn.disable(true)
                     updatePasswordProgress.show(true)
                 }
