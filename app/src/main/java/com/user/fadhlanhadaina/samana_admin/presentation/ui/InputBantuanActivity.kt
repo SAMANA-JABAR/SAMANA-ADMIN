@@ -293,6 +293,10 @@ class InputBantuanActivity : AppCompatActivity() {
                     nikInput.notifyFieldEmpty(this@InputBantuanActivity)
                     b = false
                 }
+                nikInput.text.toString().length != DEFAULT_NIK_LENGTH -> {
+                    nikInput.notifyDigitRequire(this@InputBantuanActivity)
+                    b = false
+                }
                 namaInput.text.isNullOrEmpty() -> {
                     namaInput.notifyFieldEmpty(this@InputBantuanActivity)
                     b = false

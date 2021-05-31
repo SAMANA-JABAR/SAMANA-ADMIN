@@ -44,6 +44,12 @@ object Utils {
         activity.showAlertDialog("Error", "Field ini tidak boleh kosong!")
     }
 
+    fun View.notifyDigitRequire(activity: Activity) {
+        requestFocus()
+        computeScroll()
+        activity.showAlertDialog("Error", "Digit bilangan tidak memenuhi kriteria!")
+    }
+
     fun Activity.showToast(charSequence: CharSequence?, duration: Int) {
         Toast.makeText(this, charSequence, duration).show()
     }
