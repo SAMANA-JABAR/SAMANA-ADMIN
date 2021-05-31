@@ -30,7 +30,6 @@ import com.user.fadhlanhadaina.core.util.Constants.DEFAULT_NIK_LENGTH
 import com.user.fadhlanhadaina.core.util.Mapper.mapHeaderDateToDate
 import com.user.fadhlanhadaina.core.util.Mapper.mapToHashMap
 import com.user.fadhlanhadaina.core.util.Utils.disable
-import com.user.fadhlanhadaina.core.util.Utils.notifyDigitRequire
 import com.user.fadhlanhadaina.core.util.Utils.notifyFieldEmpty
 import com.user.fadhlanhadaina.core.util.Utils.show
 import com.user.fadhlanhadaina.core.util.Utils.showAlertDialog
