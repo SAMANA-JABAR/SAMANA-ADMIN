@@ -1,9 +1,11 @@
 package com.user.fadhlanhadaina.samana_admin.presentation.ui
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.View
 import android.widget.ArrayAdapter
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -28,6 +30,7 @@ import com.user.fadhlanhadaina.core.util.Constants.DEFAULT_NIK_LENGTH
 import com.user.fadhlanhadaina.core.util.Mapper.mapHeaderDateToDate
 import com.user.fadhlanhadaina.core.util.Mapper.mapToHashMap
 import com.user.fadhlanhadaina.core.util.Utils.disable
+import com.user.fadhlanhadaina.core.util.Utils.notifyDigitRequire
 import com.user.fadhlanhadaina.core.util.Utils.notifyFieldEmpty
 import com.user.fadhlanhadaina.core.util.Utils.show
 import com.user.fadhlanhadaina.core.util.Utils.showAlertDialog
@@ -294,7 +297,11 @@ class InputBantuanActivity : AppCompatActivity() {
                     b = false
                 }
                 nikInput.text.toString().length != DEFAULT_NIK_LENGTH -> {
-                    nikInput.notifyDigitRequire(this@InputBantuanActivity)
+                    with(nikInput) {
+                        requestFocus()
+                        computeScroll()
+                    }
+                    showAlertDialog("Error", "Panjang NIK harus $DEFAULT_NIK_LENGTH digit!")
                     b = false
                 }
                 namaInput.text.isNullOrEmpty() -> {

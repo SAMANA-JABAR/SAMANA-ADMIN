@@ -41,13 +41,7 @@ object Utils {
     fun View.notifyFieldEmpty(activity: Activity) {
         requestFocus()
         computeScroll()
-        activity.showAlertDialog("Error", "Field ini tidak boleh kosong!")
-    }
-
-    fun View.notifyDigitRequire(activity: Activity) {
-        requestFocus()
-        computeScroll()
-        activity.showAlertDialog("Error", "Digit bilangan tidak memenuhi kriteria!")
+        activity.showAlertDialog("Error", "Tidak boleh ada field yang kosong!")
     }
 
     fun Activity.showToast(charSequence: CharSequence?, duration: Int) {
