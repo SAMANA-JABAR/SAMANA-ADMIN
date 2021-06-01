@@ -66,13 +66,14 @@
 
     <ProgressBar
         android:id="@+id/loginProgress"
-        style="?android:attr/progressBarStyleHorizontal"
+        style="?android:attr/progressBarStyle"
         android:layout_width="124dp"
         android:layout_height="wrap_content"
         android:indeterminate="true"
         android:indeterminateTint="@color/blue_500"
         android:progressTint="#E3F2FD"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible" />
 
 
 </LinearLayout>
