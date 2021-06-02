@@ -34,11 +34,11 @@ Decision Support System for West Java Social Assistance using the SAW and K-Mean
 
 |Input Assistance Screen|
 |--|
-|![](assets/input-data-1.png?raw=true)![](assets/input-data-2.png?raw=true)![](assets/input-data-3.png?raw=true)|
+|![](assets/input-bantuan-1.png?raw=true)![](assets/input-bantuan-2.png?raw=true)![](assets/input-bantuan-3.png?raw=true)|
 
 |Validate Assistance Screen|
 |--|
-|![](assets/validate-data.png?raw=true)|
+|![](assets/validate-bantuan.png?raw=true)|
 
 ## Tech Stack
 
