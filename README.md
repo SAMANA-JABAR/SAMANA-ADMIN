@@ -32,9 +32,9 @@ Decision Support System for West Java Social Assistance using the SAW and K-Mean
 |--|--|
 |![](assets/update-password.png?raw=true)|![](assets/logout.png?raw=true)|
 
-|Input Assistance Screen|
-|--|
-|![](assets/input-bantuan-1.png?raw=true)![](assets/input-bantuan-2.png?raw=true)![](assets/input-bantuan-3.png?raw=true)|
+|Input Assistance Screen|Input Assistance Screen|Input Assistance Screen|
+|--|--|--|
+|![](assets/input-bantuan-1.png?raw=true)|![](assets/input-bantuan-2.png?raw=true)|![](assets/input-bantuan-3.png?raw=true)|
 
 |Validate Assistance Screen|
 |--|
