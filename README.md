@@ -6,6 +6,7 @@
 - [Introduction](#introduction)
 - [Selected Theme](#selected-theme)
 - [Title](#title)
+- [Usage](#usage)
 - [Demo](#demo)
 - [Tech Stack](#tech-stack)
 - [Mad Scoreboard](#mad-scoreboard)
@@ -21,6 +22,15 @@ Economic Resilience
 ## Title
 
 Decision Support System for West Java Social Assistance using the SAW and K-Means Method
+
+## Usage
+
+```
+========== Login account ==========
+E-Mail: fadhlan.hadaina@mail.com
+Password: onge
+===================================
+```
 
 ## Demo
 
