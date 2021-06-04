@@ -34,6 +34,10 @@ Password: onge
 
 ## Demo
 
+|Video|
+|--|
+|[![Video preview](https://img.youtube.com/vi/W0bKYdmkta8/3.jpg)](https://www.youtube.com/watch?v=W0bKYdmkta8)|
+
 |Login Screen|Home|
 |--|--|
 |![](assets/login.png?raw=true)|![](assets/home.png?raw=true)|
