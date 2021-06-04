@@ -220,7 +220,6 @@ class ValidasiBantuanActivity : AppCompatActivity() {
             showAlertDialog("Info", it)
 
             binding.validasiNik.setText("")
-//            disableValidateBtn(false)
             binding.loadingValidate.show(false)
         }
     }

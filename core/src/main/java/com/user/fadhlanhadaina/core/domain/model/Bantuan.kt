@@ -1,11 +1,8 @@
 package com.user.fadhlanhadaina.core.domain.model
 
-import com.google.gson.annotations.SerializedName
-
 data class Bantuan (
     var nik: String?,
     var nama: String?,
-    @SerializedName("tgl_lahir")
     var tglLahir: String?,
     var tanggungan: String?,
     var pendidikan: String?,
@@ -24,7 +21,6 @@ data class Bantuan (
     var lantai: String?,
     var penerangan: String?,
     var air: String?,
-    @SerializedName("luas_rumah")
     var luasRumah: String?,
     var validasi: String?
 )

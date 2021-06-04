@@ -3,7 +3,6 @@ package com.user.fadhlanhadaina.core.util
 import android.app.Activity
 import android.content.Intent
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.snackbar.Snackbar
 
@@ -42,10 +41,6 @@ object Utils {
         requestFocus()
         computeScroll()
         activity.showAlertDialog("Error", "Tidak boleh ada field yang kosong!")
-    }
-
-    fun Activity.showToast(charSequence: CharSequence?, duration: Int) {
-        Toast.makeText(this, charSequence, duration).show()
     }
 
     fun Activity.showSnackbar(view: View, charSequence: CharSequence, duration: Int) {

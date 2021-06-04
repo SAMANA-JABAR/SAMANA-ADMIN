@@ -1,11 +1,9 @@
 package com.user.fadhlanhadaina.samana_admin.presentation.ui
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.View
 import android.widget.ArrayAdapter
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -391,13 +389,6 @@ class InputBantuanActivity : AppCompatActivity() {
     }
 
     private fun performInput() {
-//        val bantuan = Bantuan(
-//            "123456", "Fadhlan Hadaina", "04/02/1003", "2", "SD",
-//            "TNI", "Pekerja tetap", "1.000.000 - 1.500.000", "Kab. Serang",
-//            "Anyer", "Cikoneng", "02", "01", "Kp. Samboja",
-//            "Sehat", "Genteng", "Tembok", "Keramik",
-//            "Listrik PLN", "PDAM", ">36 m2"
-//        )
         disableBtn(true)
 
         val bantuan = mapInputToBantuan()
